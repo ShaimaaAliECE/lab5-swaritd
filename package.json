@@ -1,0 +1,25 @@
+{
+  "name": "lab5",
+  "version": "1.0.0",
+  "description": "3316 lab5, dec2021, sdholaki-251107834",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShaimaaAliECE/lab5-swaritd.git"
+  },
+  "keywords": [
+    "3316lab5"
+  ],
+  "author": "Swarit Dholakia - 251107834",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShaimaaAliECE/lab5-swaritd/issues"
+  },
+  "homepage": "https://github.com/ShaimaaAliECE/lab5-swaritd#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
