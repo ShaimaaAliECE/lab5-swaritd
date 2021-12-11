@@ -1,8 +1,10 @@
 // swarit dholakia - 251107834 - sdholaki@uwo.ca
 //se3316 lab5
 
+const path = require('path');
 const express = require("express");
 let jobsList = require("./jobs.json");
+const { append } = require('express/lib/response');
 
 const app = express();
 
@@ -30,22 +32,24 @@ app.get("/jobCategories", (req, res) => {
 //q3:
 //-----
 // new array to hold jobs, find city name in job title, push city to new array, convert and send as json
-app.get('/jobInCity', (req,res)=> {
-    let jobsincity = [];
+app.get('/JobsByCity', (req, res) => {
 
-    for (let job in jobsList)
+    let foundJobs = [];
+
+    let city = req.query.city;
+
+    for (const prop in jobsList) 
     {
-        if (jobsList[job].title.includes(req.query.city))
+        let cityString = jobsList[prop].title;
+
+        if (cityString.search(city) !== -1) 
         {
-            jobsincity.push(job);   
+            foundJobs.push(prop);
         }
     }
-    res.json(
-        {
-            ListAllJobCities: jobsincity
-        }
-    );
-});
+    
+    res.send(foundJobs)
+})
 //-----
 
 //q2:
